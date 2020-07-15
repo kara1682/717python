@@ -1,25 +1,18 @@
-#print('%10s%10s%10s' % ('name','age','address'))
-#print('%-10s%-10s%-10s' % ('name','age','address'))
-#print("\n")
-#print('{:10}{:10}{:10}'.format('name','age','address'))
-#print('{:>10}{:>10}{:>10}'.format('name','age','address'))
-#print('{:<10}{:<10}{:<10}'.format('name','age','address'))
-#print('{:^10}{:^10}{:^10}'.format('name','age','address'))
-#print('{:-^10}{:-^10}{:-^10}'.format('name','age','address'))
+#*** 직장인의 연봉을 x 라 하고 연봉의 5%는 국민연금으로
+#연봉의 6%는 건강보험으로
+#연봉의 1%는 고용보험으로 연봉의 8%느 퇴직연금으로
+#계산이 된다고 가정할 때
+#월 실수령액은 얼마가 되는지 계산하는 프로그램을 작성하시오.
+#가능하면 국민연금, 건강보험, 고용보험, 퇴직연금
+#금액도 사용자가 알 수 있도록 하시오.
 
-# 화폐단위 1000단위 컴머
-print('{:,}{:,}'.format(10000,10000))
+x = int(input("연봉: "))
+cf = x * 0.05 #국민연금
+hin = x * 0.06 #건강보험
+hirein = x * 0.01 #고용보험
+rein = x * 0.08 #퇴직연금
+salary = (x - cf - hin - hirein - rein)/12
 
-# IP address 192.168.108.11
-a1=(192)
-a2=(168)
-a3=(108)
-a4=(11)
-print(a1,a2,a3,a4,sep=".")
-
-print('binary print {:b}'.format(192))
-print('binary print {:b}.{:b}.{:b}.{:b}'.format(192,168,108,11))
-
-print('{0} {1} {2} {3} {4} {5}'.format('The','famine','was','severe','is','Samaria'))
-print('{4} {5} {2} {3} {0} {1}'.format('The','famine','was','severe','is','Samaria'))
+print('국민연금: {:,},건강보험: {:,},고용보험: {:,}, 퇴직연금: {:,}'.format(cf,hin,hirein,rein))
+print('월 실수령액은 {:,} 입니다.'.format(salary))
 
